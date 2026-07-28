@@ -1,0 +1,541 @@
+/* ── Page (모바일: 375px) ── */
+.page {
+  display: flex;
+  flex-direction: column;
+  width: 375px;
+  min-height: 100vh;
+  background: var(--bg-page);
+  font-family: var(--font-default);
+  position: relative;
+}
+
+/* ── 검색 바 ── */
+.searchBarWrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--line-layout);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.backBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  color: var(--typography-black-100);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.searchBar {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 12px;
+  background: var(--bg-faint, #F5F5F5);
+  border: 1.5px solid transparent;
+  border-radius: 10px;
+  transition: border-color 0.15s;
+}
+
+.searchBarFocused {
+  border-color: #FA2E43;
+  background: var(--bg-surface);
+}
+
+.searchInput {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  font-family: var(--font-default);
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--typography-black-100);
+  min-width: 0;
+}
+.searchInput::placeholder { color: var(--typography-black-45); }
+
+.clearBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--typography-black-45);
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.searchSubmitBtn {
+  background: none;
+  border: none;
+  font-family: var(--font-default);
+  font-size: 15px;
+  font-weight: 700;
+  color: #FA2E43;
+  cursor: pointer;
+  padding: 0 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ── 최근 검색어 드롭다운 ── */
+.recentDropdown {
+  position: absolute;
+  top: 57px;
+  left: 0;
+  right: 0;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--line-layout);
+  z-index: 19;
+  padding-bottom: 8px;
+}
+
+.recentHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--typography-black-60);
+}
+
+.clearAllBtn {
+  background: none;
+  border: none;
+  font-family: var(--font-default);
+  font-size: 13px;
+  color: var(--typography-black-45);
+  cursor: pointer;
+}
+
+.recentItem {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.recentBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  height: 44px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-family: var(--font-default);
+  font-size: 14px;
+  color: var(--typography-black-100);
+}
+
+.recentRemove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  color: var(--typography-black-45);
+}
+
+.recentEmpty {
+  padding: 20px 16px;
+  font-size: 14px;
+  color: var(--typography-black-45);
+  margin: 0;
+}
+
+/* ── 탭 바 ── */
+.tabFilterRow {
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--line-layout);
+  position: sticky;
+  top: 57px;
+  z-index: 10;
+}
+
+.tabs {
+  display: flex;
+  padding: 0 4px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.tabs::-webkit-scrollbar { display: none; }
+
+.tab {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 12px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-family: var(--font-default);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--typography-black-45);
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-bottom: -1px;
+}
+
+.tabActive {
+  font-weight: 700;
+  color: var(--typography-black-100);
+  border-bottom-color: var(--typography-black-100);
+}
+
+/* ── 정렬/필터 바 ── */
+.sortFilterRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--line-layout);
+  position: sticky;
+  top: 106px;
+  z-index: 9;
+}
+
+.sortWrap {
+  position: relative;
+}
+
+.sortBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: 1px solid var(--line-layout);
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-family: var(--font-default);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--typography-black-60);
+  cursor: pointer;
+}
+
+.sortMenu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  background: var(--bg-surface);
+  border: 1px solid var(--line-layout);
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  list-style: none;
+  margin: 0;
+  padding: 4px 0;
+  min-width: 110px;
+  z-index: 30;
+}
+
+.sortOption {
+  display: block;
+  width: 100%;
+  padding: 10px 14px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-family: var(--font-default);
+  font-size: 14px;
+  color: var(--typography-black-100);
+  cursor: pointer;
+}
+.sortOption:hover { background: var(--bg-faint); }
+.sortOptionActive { font-weight: 700; color: #FA2E43; }
+
+.filterBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: 1px solid var(--line-layout);
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-family: var(--font-default);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--typography-black-60);
+  cursor: pointer;
+}
+
+/* ── 결과 수 ── */
+.resultCount {
+  padding: 12px 16px 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--typography-black-45);
+}
+
+/* ── 섹션 헤더 ── */
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 16px 8px;
+}
+
+.sectionTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--typography-black-100);
+}
+
+.sectionCount {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--typography-black-45);
+}
+
+.moreBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: auto;
+  background: none;
+  border: none;
+  font-family: var(--font-default);
+  font-size: 13px;
+  color: var(--typography-black-45);
+  cursor: pointer;
+}
+.moreBtn:hover { color: var(--typography-black-100); }
+
+/* ── 구분선 ── */
+.divider {
+  height: 8px;
+  background: var(--bg-page);
+  border-top: 1px solid var(--line-layout);
+  border-bottom: 1px solid var(--line-layout);
+}
+
+/* ── 결과 영역 ── */
+.results {
+  flex: 1;
+  padding-bottom: 40px;
+}
+
+/* ── 콘텐츠 카드 ── */
+.contentCard {
+  display: flex;
+  gap: 12px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line-layout);
+  background: var(--bg-surface);
+  cursor: pointer;
+  transition: background 0.1s;
+}
+.contentCard:hover { background: var(--bg-faint); }
+
+.thumbnail {
+  width: 72px;
+  height: 54px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--bg-strong);
+}
+
+.thumbnailPlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #374151 0%, #1F2937 100%);
+}
+
+.contentInfo {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.categoryTag {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 6px;
+  background: #F3F4F6;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #374151;
+  align-self: flex-start;
+}
+
+.contentTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--typography-black-100);
+  line-height: 1.4;
+  letter-spacing: -0.03em;
+  margin: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.contentMeta {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.instructor {
+  font-size: 12px;
+  color: var(--typography-black-60);
+}
+
+.metaDot {
+  font-size: 12px;
+  color: var(--typography-black-45);
+}
+
+.students {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 12px;
+  color: var(--typography-black-45);
+}
+
+/* ── 스킬 카드 ── */
+.skillCard {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line-layout);
+  background: var(--bg-surface);
+  cursor: pointer;
+  transition: background 0.1s;
+}
+.skillCard:hover { background: var(--bg-faint); }
+
+.skillIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #DCFCE7;
+  flex-shrink: 0;
+}
+
+.skillInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.skillName {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--typography-black-100);
+  letter-spacing: -0.03em;
+  margin: 0 0 2px;
+}
+
+.skillMeta {
+  font-size: 12px;
+  color: var(--typography-black-45);
+}
+
+/* ── 커리어 카드 ── */
+.careerCard {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line-layout);
+  background: var(--bg-surface);
+  cursor: pointer;
+  transition: background 0.1s;
+}
+.careerCard:hover { background: var(--bg-faint); }
+
+.careerIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #EDE9FE;
+  flex-shrink: 0;
+}
+
+.careerInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.careerName {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--typography-black-100);
+  letter-spacing: -0.03em;
+  margin: 0 0 2px;
+}
+
+.careerMeta {
+  font-size: 12px;
+  color: var(--typography-black-45);
+}
+
+/* ── 키워드 하이라이트 ── */
+.highlight {
+  background: #FFECB3;
+  color: #B45309;
+  border-radius: 2px;
+  padding: 0 1px;
+}
+
+/* ── 빈 상태 ── */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 80px 20px;
+}
+
+.emptyTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--typography-black-60);
+  margin: 0;
+  text-align: center;
+}
+
+.emptyDesc {
+  font-size: 13px;
+  color: var(--typography-black-45);
+  margin: 0;
+  text-align: center;
+}
