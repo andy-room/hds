@@ -1,0 +1,194 @@
+/* Calendar popup container */
+.calendar {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  background-color: var(--bg-surface);
+  border: 1px solid #E1E2E4;
+  border-radius: 8px;
+  box-shadow: 0px 4px 4px -4px rgba(0, 0, 0, 0.05), 0px 16px 16px -8px rgba(0, 0, 0, 0.1);
+  user-select: none;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.monthLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  font-family: var(--font-default);
+  font-size: var(--text-16);
+  font-weight: var(--font-regular);
+  letter-spacing: var(--tracking-16);
+  color: var(--typography-black-100);
+  cursor: pointer;
+}
+
+.chevron {
+  color: var(--typography-black-100);
+  opacity: 0.5;
+}
+
+.navBtns {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.navBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 4px;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--typography-black-100);
+  cursor: pointer;
+  transition: background-color 0.1s;
+}
+
+.navBtn:hover {
+  background-color: var(--bg-ghost);
+}
+
+.navBtn:active {
+  background-color: rgba(23, 23, 25, 0.1);
+}
+
+/* Calendar grid: 7 columns of 32px */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 32px);
+  gap: 0;
+}
+
+/* Shared cell base */
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  font-family: var(--font-number);
+  font-size: var(--text-12);
+  font-weight: var(--font-regular);
+  letter-spacing: var(--tracking-12);
+  text-align: center;
+}
+
+/* Day label row */
+.dayLabel {
+  color: var(--typography-black-100);
+  cursor: default;
+}
+
+/* Sunday label / number = red */
+.sunday {
+  color: #FA2E43;
+}
+
+/* Date cell (button) */
+.dateCell {
+  position: relative;
+  z-index: 1;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--typography-black-100);
+  cursor: pointer;
+  transition: background-color 0.1s;
+}
+
+.dateCell:focus-visible {
+  outline: 2px solid var(--brand-company-primary);
+  outline-offset: 2px;
+}
+
+/* Today: light circle bg */
+.today {
+  background-color: #EAEBEC;
+}
+
+/* Selected / range edge: dark circle, white text */
+.active {
+  background-color: #46474C !important;
+  color: #FFFFFF !important;
+  border-radius: 50%;
+}
+
+/* Out of current month: dimmed, no pointer */
+.outOfMonth {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* In range (not edge): slightly different text style */
+.inRange {
+  border-radius: 0;
+  background: transparent;
+}
+
+/* Range strip (background band) */
+.cellWrapper {
+  position: relative;
+  width: 32px;
+  height: 32px;
+}
+
+.strip {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background-color: #F7F7F8;
+  z-index: 0;
+}
+
+.stripMiddle {
+  left: 0;
+  right: 0;
+}
+
+.stripStart {
+  left: 50%;
+  right: 0;
+}
+
+.stripEnd {
+  left: 0;
+  right: 50%;
+}
+
+/* Hover for unselected current-month dates */
+.dateCell:not(.outOfMonth):not(.active):hover {
+  background-color: var(--bg-strong);
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .calendar {
+    border-color: #3A3B3F;
+  }
+  .today {
+    background-color: #2A2B2E;
+  }
+  .strip {
+    background-color: #2A2B2E;
+  }
+}
+
+:root[data-theme='dark'] .calendar { border-color: #3A3B3F; }
+:root[data-theme='dark'] .today { background-color: #2A2B2E; }
+:root[data-theme='dark'] .strip { background-color: #2A2B2E; }

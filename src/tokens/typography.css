@@ -1,0 +1,45 @@
+/* HDS Typography Tokens
+ * font/family/default → Pretendard (한글·한자·특수문자·heading·body 전체)
+ * font/family/number  → SUIT (숫자·영문 전용)
+ */
+
+:root {
+  /* Font families */
+  --font-default: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-number: 'SUIT', 'Pretendard', sans-serif;
+
+  /* Font sizes */
+  --text-12: 12px;
+  --text-14: 14px;
+  --text-16: 16px;
+  --text-18: 18px;
+  --text-20: 20px;
+  --text-24: 24px;
+  --text-28: 28px;
+  --text-32: 32px;
+  --text-40: 40px;
+  --text-48: 48px;
+  --text-64: 64px;
+
+  /* Font weights */
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-bold: 700;
+
+  /* Line heights */
+  --leading-body: 1.6em;    /* body */
+  --leading-heading: 1.4em; /* heading */
+
+  /* Letter spacing — body (size → tracking) */
+  --tracking-12: -0.0417em;
+  --tracking-14: -0.0357em;
+  --tracking-16: -0.0313em;
+  --tracking-18: -0.0278em;
+  --tracking-20: -0.035em;
+  --tracking-24: -0.0292em;
+  --tracking-28: -0.025em;
+  --tracking-32: -0.0219em;
+  --tracking-40: -0.0175em;
+  --tracking-48: -0.0146em;
+  --tracking-64: -0.0109em;
+}

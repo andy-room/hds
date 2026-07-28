@@ -1,0 +1,31 @@
+/* ── Circular spinner ── */
+.circularSvg {
+  display: block;
+  animation: hds-spin 0.9s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes hds-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ── Wave dot ── */
+.wavedotWrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+
+.dot {
+  display: inline-block;
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: hds-wave 0.8s ease-in-out infinite;
+}
+
+@keyframes hds-wave {
+  0%, 60%, 100% { transform: translateY(0); }
+  30%           { transform: translateY(-40%); }
+}

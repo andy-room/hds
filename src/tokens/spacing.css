@@ -1,0 +1,23 @@
+/* HDS Spacing Tokens
+ * 4px 베이스 그리드, Tailwind CSS 스케일 기준 네이밍 (spacing/{n})
+ * 최소 단위: 2px (spacing/0.5)
+ */
+
+:root {
+  --spacing-0: 0px;
+  --spacing-0-5: 2px;   /* 최소 간격 */
+  --spacing-1: 4px;     /* 인라인 요소 간격 */
+  --spacing-2: 8px;     /* 소형 컴포넌트 내부 패딩 */
+  --spacing-3: 12px;    /* 기본 내부 패딩, 버튼 간 간격 */
+  --spacing-4: 16px;    /* 컴팩트 레이아웃 패딩 */
+  --spacing-5: 20px;    /* 기본 패딩 */
+  --spacing-6: 24px;    /* 컴포넌트 내부 여백 */
+  --spacing-8: 32px;    /* 섹션 내부 여백, 카드 패딩 */
+  --spacing-10: 40px;   /* 섹션 간 간격 */
+  --spacing-12: 48px;   /* 큰 섹션 간격 */
+  --spacing-16: 64px;   /* 레이아웃 단위 간격 */
+  --spacing-20: 80px;   /* 페이지 레벨 간격 */
+  --spacing-24: 96px;   /* 히어로 섹션 여백 */
+  --spacing-32: 128px;  /* 대형 레이아웃 여백 */
+  --spacing-40: 160px;  /* 최대 여백 */
+}

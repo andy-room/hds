@@ -1,0 +1,26 @@
+.root {
+  display: flex;
+  align-items: center;
+}
+
+.item {
+  margin-left: -12px;
+  box-shadow: 0 0 0 2px var(--bg-surface);
+}
+
+.root > :first-child {
+  margin-left: 0;
+}
+
+.overflow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-muted);
+  color: var(--typography-black-60);
+  font-family: var(--font-default);
+  font-size: var(--text-12);
+  font-weight: var(--font-medium);
+  flex-shrink: 0;
+}

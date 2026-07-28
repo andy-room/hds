@@ -1,0 +1,12 @@
+/* HDS Border Radius Tokens */
+
+:root {
+  --radius-none: 0px;       /* 각진 요소 */
+  --radius-sm: 4px;         /* 소형 컴포넌트 */
+  --radius-md: 8px;         /* 버튼, 인풋 */
+  --radius-lg: 16px;        /* 카드 */
+  --radius-xl: 20px;        /* 대형 카드 */
+  --radius-2xl: 32px;       /* 특수 강조 카드, 히어로 영역 */
+  --radius-3xl: 40px;       /* 대형 이미지 컨테이너 */
+  --radius-full: 9999px;    /* 완전 원형 요소 */
+}

@@ -1,0 +1,18 @@
+@import './tokens/index.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-default);
+  font-size: var(--text-16);
+  line-height: var(--leading-body);
+  color: var(--typography-black-100);
+  background-color: var(--bg-page);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

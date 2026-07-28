@@ -1,0 +1,33 @@
+.root {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  border-radius: inherit;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.15s ease;
+}
+
+.root:hover {
+  background-color: var(--bg-ghost);
+}
+
+.root:active {
+  background-color: rgba(23, 23, 25, 0.12);
+}
+
+.root:focus-visible {
+  outline: 2px solid var(--brand-hunet-red);
+  outline-offset: 2px;
+}
+
+.disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}

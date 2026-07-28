@@ -1,0 +1,20 @@
+/* HDS Liquid Tokens — Breakpoints
+ * 5단계 반응형 모드: xsmall ~ xlarge
+ */
+
+:root {
+  --breakpoint-xsmall:  375px;
+  --breakpoint-small:   768px;
+  --breakpoint-medium:  1024px;
+  --breakpoint-large:   1440px;
+  --breakpoint-xlarge:  2500px;
+}
+
+/*
+ * 사용 예시 (CSS media query):
+ * @media (max-width: 767px)  → xsmall
+ * @media (max-width: 1023px) → small
+ * @media (max-width: 1439px) → medium
+ * @media (max-width: 2499px) → large
+ * @media (min-width: 2500px) → xlarge
+ */

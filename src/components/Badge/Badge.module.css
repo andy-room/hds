@@ -1,0 +1,67 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-default);
+  font-size: var(--text-12);
+  font-weight: 600;
+  letter-spacing: var(--tracking-12);
+  line-height: var(--leading-body);
+  white-space: nowrap;
+}
+
+/* Number badges — solid */
+.primary {
+  background-color: #70737C;
+  color: var(--typography-white-100);
+}
+
+.secondary {
+  background-color: #AEB0B6;
+  color: var(--typography-white-100);
+}
+
+/* Status badges — tinted */
+.brand {
+  background-color: rgba(250, 46, 67, 0.08);
+  color: var(--brand-company-primary);
+}
+
+.info {
+  background-color: rgba(0, 102, 255, 0.08);
+  color: var(--icon-info-color-round);
+}
+
+.success {
+  background-color: rgba(0, 153, 51, 0.08);
+  color: var(--icon-success-color-round);
+}
+
+.warning {
+  background-color: rgba(255, 146, 0, 0.08);
+  color: var(--icon-warning-color-round);
+}
+
+.error {
+  background-color: rgba(250, 46, 67, 0.08);
+  color: var(--icon-error-color-round);
+}
+
+.normal {
+  background-color: rgba(23, 23, 25, 0.06);
+  color: var(--typography-black-45);
+}
+
+/* Dot badge */
+.dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background-color: var(--icon-info-color-round);
+  box-shadow: 0 0 0 2px var(--bg-surface);
+  flex-shrink: 0;
+}

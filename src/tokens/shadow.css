@@ -1,0 +1,49 @@
+/* HDS Shadow Tokens
+ * Light mode 기준. Dark mode는 동일 토큰명에 별도 값 적용.
+ */
+
+:root {
+  --shadow-xs: 0px 1px 4px 0px rgba(0, 0, 0, 0.05);
+  --shadow-sm:
+    0px 1px 4px 0px rgba(0, 0, 0, 0.05),
+    0px 1px 4px 0px rgba(0, 0, 0, 0.1);
+  --shadow-md:
+    0px 1px 4px -1px rgba(0, 0, 0, 0.05),
+    0px 4px 4px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg:
+    0px 4px 4px -4px rgba(0, 0, 0, 0.05),
+    0px 16px 32px -4px rgba(0, 0, 0, 0.1);
+  --shadow-xl:
+    0px 4px 4px -4px rgba(0, 0, 0, 0.05),
+    0px 16px 16px -8px rgba(0, 0, 0, 0.1);
+  --shadow-2xl: 0px 16px 32px -8px rgba(0, 0, 0, 0.4);
+}
+
+/* Dark mode — 불투명도를 높여 대비 보정 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --shadow-xs: 0px 1px 4px 0px rgba(0, 0, 0, 0.15);
+    --shadow-sm:
+      0px 1px 4px 0px rgba(0, 0, 0, 0.15),
+      0px 1px 4px 0px rgba(0, 0, 0, 0.3);
+    --shadow-md:
+      0px 1px 4px -1px rgba(0, 0, 0, 0.15),
+      0px 4px 4px -1px rgba(0, 0, 0, 0.3);
+    --shadow-lg:
+      0px 4px 4px -4px rgba(0, 0, 0, 0.15),
+      0px 16px 32px -4px rgba(0, 0, 0, 0.3);
+  }
+}
+
+[data-theme='dark'] {
+  --shadow-xs: 0px 1px 4px 0px rgba(0, 0, 0, 0.15);
+  --shadow-sm:
+    0px 1px 4px 0px rgba(0, 0, 0, 0.15),
+    0px 1px 4px 0px rgba(0, 0, 0, 0.3);
+  --shadow-md:
+    0px 1px 4px -1px rgba(0, 0, 0, 0.15),
+    0px 4px 4px -1px rgba(0, 0, 0, 0.3);
+  --shadow-lg:
+    0px 4px 4px -4px rgba(0, 0, 0, 0.15),
+    0px 16px 32px -4px rgba(0, 0, 0, 0.3);
+}

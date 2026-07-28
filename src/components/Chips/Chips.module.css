@@ -1,0 +1,104 @@
+.chips {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* filter section: button + divider */
+.filterSection {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.filterBtn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 900px;
+  border: 1px solid #E1E2E4;
+  background-color: var(--bg-surface);
+  color: var(--typography-black-100);
+  cursor: pointer;
+  transition: background-color 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.filterBtn:hover:not(:disabled) {
+  background-color: var(--bg-strong);
+}
+
+.filterBtn:active:not(:disabled) {
+  background-color: var(--bg-muted);
+}
+
+.filterBtn:focus-visible {
+  outline: 2px solid var(--brand-company-primary);
+  outline-offset: 2px;
+}
+
+/* active state */
+.filterActive {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-color: #70737C;
+}
+
+/* badge count (top-right) */
+.filterBadge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 4px;
+  border-radius: 900px;
+  background-color: #46474C;
+  color: #FFFFFF;
+  font-family: var(--font-default);
+  font-size: 11px;
+  font-weight: var(--font-semibold);
+  line-height: 20px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* divider */
+.divider {
+  display: block;
+  width: 1px;
+  height: 16px;
+  background-color: #AEB0B6;
+  margin-left: 8px;
+}
+
+/* chip list */
+.list {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+/* dark mode */
+@media (prefers-color-scheme: dark) {
+  .filterBtn {
+    border-color: #3A3B3F;
+  }
+  .filterActive {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: #70737C;
+  }
+  .divider {
+    background-color: #3A3B3F;
+  }
+}
+
+:root[data-theme='dark'] .filterBtn { border-color: #3A3B3F; }
+:root[data-theme='dark'] .filterActive {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: #70737C;
+}
+:root[data-theme='dark'] .divider { background-color: #3A3B3F; }

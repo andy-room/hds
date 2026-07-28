@@ -1,0 +1,188 @@
+/* Figma active state: light=#46474C, dark=#70737C (no token match) */
+:root {
+  --pagination-active-bg: #46474C;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --pagination-active-bg: #70737C; }
+}
+[data-theme='dark'] { --pagination-active-bg: #70737C; }
+[data-theme='light'] { --pagination-active-bg: #46474C; }
+
+/* ── Shared: icon button (lg-desktop / lg-mobile prev/next) ── */
+.iconBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--line-layout);
+  border-radius: 8px;
+  color: var(--typography-black-100);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color 0.1s;
+}
+.iconBtn:hover:not(:disabled) {
+  background-color: var(--bg-strong);
+}
+.iconBtn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* ── lg-desktop ── */
+.lgDesktop {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pageRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.pageBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 16px;
+  background-color: var(--bg-surface);
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font-default);
+  font-size: var(--text-14);
+  font-weight: 400;
+  line-height: var(--leading-body);
+  color: var(--typography-black-60);
+  cursor: pointer;
+  transition: background-color 0.1s;
+}
+.pageBtn:hover:not(.pageBtnActive) {
+  background-color: var(--bg-strong);
+}
+.pageBtnActive {
+  background-color: var(--pagination-active-bg);
+  color: var(--static-white);
+  font-weight: 600;
+}
+
+.ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  font-family: var(--font-default);
+  font-size: var(--text-14);
+  color: var(--typography-black-60);
+  user-select: none;
+}
+
+/* ── lg-mobile ── */
+.lgMobile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px;
+  min-width: 200px;
+}
+
+.mobileText {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-default);
+  font-size: var(--text-14);
+  line-height: var(--leading-body);
+}
+.mobileCurrent {
+  font-weight: 600;
+  color: var(--typography-black-100);
+}
+.mobileSep,
+.mobileTotal {
+  font-weight: 400;
+  color: var(--typography-black-60);
+}
+
+/* ── md ── */
+.md {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.chevronBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  background: none;
+  border: none;
+  color: var(--typography-black-100);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.chevronBtn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.mdPageList {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mdItem {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  padding: 0 6px;
+  background: transparent;
+  border: none;
+  border-radius: 900px;
+  font-family: var(--font-default);
+  font-size: var(--text-12);
+  font-weight: 400;
+  line-height: var(--leading-body);
+  color: var(--typography-black-60);
+  cursor: pointer;
+}
+.mdItemActive {
+  background-color: var(--pagination-active-bg);
+  color: var(--static-white);
+  font-weight: 600;
+}
+
+/* ── sm ── */
+.sm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  background-color: var(--typography-black-disabled);
+  border: none;
+  border-radius: 900px;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+.dotActive {
+  background-color: var(--pagination-active-bg);
+}

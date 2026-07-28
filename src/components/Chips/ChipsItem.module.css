@@ -1,0 +1,93 @@
+.chip {
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  border-radius: 900px;
+  font-family: var(--font-default);
+  font-size: var(--text-14);
+  line-height: var(--leading-body);
+  letter-spacing: var(--tracking-14);
+  font-weight: var(--font-regular);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.15s, filter 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* filter: h40, px12, gap4 */
+.filter {
+  height: 40px;
+  padding: 0 12px;
+  gap: 4px;
+  background-color: var(--bg-surface);
+  color: rgba(23, 23, 25, 0.8);
+  box-shadow: inset 0 0 0 1px #E1E2E4;
+}
+
+/* option: h32, px12, gap2 */
+.option {
+  height: 32px;
+  padding: 0 12px;
+  gap: 2px;
+  background-color: var(--bg-surface);
+  color: rgba(23, 23, 25, 0.8);
+  box-shadow: inset 0 0 0 1px #E1E2E4;
+}
+
+/* selected */
+.filter.selected,
+.option.selected {
+  background-color: #46474C;
+  color: #FFFFFF;
+  box-shadow: none;
+}
+
+.label {
+  flex: none;
+}
+
+.icon {
+  opacity: 0.4;
+  flex-shrink: 0;
+}
+
+.cancelBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.4;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+/* hover */
+.chip:not(.selected):hover:not(:disabled) {
+  background-color: var(--bg-strong);
+}
+.chip.selected:hover:not(:disabled) {
+  filter: brightness(1.12);
+}
+.chip:active:not(:disabled) {
+  filter: brightness(0.9);
+}
+
+/* focus */
+.chip:focus-visible {
+  outline: 2px solid var(--brand-company-primary);
+  outline-offset: 2px;
+}
+
+/* dark mode */
+@media (prefers-color-scheme: dark) {
+  .filter:not(.selected),
+  .option:not(.selected) {
+    color: rgba(255, 255, 255, 0.7);
+    box-shadow: inset 0 0 0 1px #3A3B3F;
+  }
+}
+
+:root[data-theme='dark'] .filter:not(.selected),
+:root[data-theme='dark'] .option:not(.selected) {
+  color: rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 0 0 1px #3A3B3F;
+}

@@ -1,0 +1,89 @@
+.wrapper {
+  position: relative;
+  display: inline-block;
+  width: 280px;
+}
+
+/* Trigger field */
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid #E1E2E4;
+  border-radius: 8px;
+  background-color: var(--bg-surface);
+  cursor: pointer;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  gap: 8px;
+}
+
+.trigger:hover:not(:disabled) {
+  border-color: #AEB0B6;
+}
+
+.trigger.focused,
+.trigger:focus-visible {
+  border-color: var(--brand-company-primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(250, 46, 67, 0.12);
+}
+
+.trigger.error {
+  border-color: #FA2E43;
+}
+
+.trigger.success {
+  border-color: #009933;
+}
+
+.trigger.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Trigger text */
+.triggerText {
+  flex: 1;
+  text-align: left;
+  font-family: var(--font-default);
+  font-size: var(--text-16);
+  line-height: var(--leading-body);
+  letter-spacing: var(--tracking-16);
+  color: var(--typography-black-100);
+  font-weight: var(--font-regular);
+}
+
+.placeholder {
+  color: rgba(23, 23, 25, 0.4);
+}
+
+/* Calendar icon */
+.triggerIcon {
+  flex-shrink: 0;
+  color: var(--typography-black-100);
+  opacity: 0.5;
+}
+
+/* Popup positioning */
+.popup {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  z-index: 100;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .trigger {
+    border-color: #3A3B3F;
+  }
+  .placeholder {
+    color: rgba(255, 255, 255, 0.35);
+  }
+}
+
+:root[data-theme='dark'] .trigger { border-color: #3A3B3F; }
+:root[data-theme='dark'] .placeholder { color: rgba(255, 255, 255, 0.35); }
